@@ -2,9 +2,6 @@ import Foundation
 import AVFoundation
 import SpriteKit
 
-
-
-
 public class Scene: SKScene {
     var listaQuarto = [Quarto]()
     var contador : Contador!
@@ -19,13 +16,6 @@ public class Scene: SKScene {
     
     
     override public func didMove(to view: SKView) {
-
-        
-     
-        
-        self.montaCena(andar: 1)
-        
-        
         if Andar.shared.andar == 0{
             texto.fontColor = .black
             texto3.fontColor = .black
@@ -51,16 +41,11 @@ public class Scene: SKScene {
             self.addChild(texto3)
             
         }
-        
-
-        
     }
     
     
-    
-    func montaCena(andar: Int){
+    func montaCena(){
         time = 0
-        
         fundo.zPosition = 0
         
         switch(Andar.shared.andar){
@@ -77,9 +62,7 @@ public class Scene: SKScene {
             
         }
         
-        
         fundo.position = CGPoint(x: frame.midX, y: frame.midY)
-        
         self.addChild(fundo)
         
         if Andar.shared.andar == 3{
@@ -117,7 +100,6 @@ public class Scene: SKScene {
             }
         }
         contador = Contador(scene: self)
-        
     }
     
     
@@ -128,8 +110,14 @@ public class Scene: SKScene {
     func touchDown(atPoint pos : CGPoint) {
         for quarto in listaQuarto{
             if quarto.contains(pos){
-                quarto.switchLight()
-                
+                if (quarto.background.texture!.description.contains("quarto1")){
+                    print("maluco")
+                    quarto.switchLight(teste: 1)
+                }
+                else{
+                    print("doidao")
+                    quarto.switchLight(teste: "oi")
+                }
             }
         }
     }
@@ -137,10 +125,12 @@ public class Scene: SKScene {
         viewController.gameOver()
         Andar.shared.tempo = time
         points?.invalidate()
+        fundo.removeFromParent()
         listaQuarto.forEach { (q) in
             q.removeFromParent()
         }
         listaQuarto.removeAll()
+        comecou = false
     }
     
     @objc func timer(){
