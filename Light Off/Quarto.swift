@@ -37,7 +37,6 @@ public class Quarto: SKSpriteNode{
         mini_switch = SKSpriteNode(imageNamed: "switch_off1")
         boneco = SKSpriteNode(imageNamed: ["boneco1", "boneco2", "boneco3", "boneco4", "boneco5", "boneco6"].randomElement()!)
         
-        
         background.position = CGPoint(x: 0, y: 0)
         light.position = CGPoint(x: light.frame.midX, y: 120)
         boneco.position = CGPoint(x: boneco.frame.midX + 140, y: -117)
@@ -150,10 +149,7 @@ public class Quarto: SKSpriteNode{
             }
         }
         else{
-            if !buttonOn{
-                turnOn()
-            }
-            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (Timer) in
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (Timer) in
                 self.item = 0
             }
             item += 1
