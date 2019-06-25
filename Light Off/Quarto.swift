@@ -26,6 +26,7 @@ public class Quarto: SKSpriteNode{
     var buttonOn = true
     let on = UIImpactFeedbackGenerator(style: .heavy)
     let off = UIImpactFeedbackGenerator(style: .light)
+    var item = 0
     
     public override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         
@@ -131,7 +132,7 @@ public class Quarto: SKSpriteNode{
         
     }
     
-    public func switchLight(){
+    public func switchLight(teste: String){
         
         if buttonOn{
             turnOff()
@@ -139,8 +140,24 @@ public class Quarto: SKSpriteNode{
         else{
             turnOn()
         }
-        
-        
+    }
+    
+    public func switchLight(teste: Int){
+        if item >= 1{
+            item = 0
+            if buttonOn{
+                turnOff()
+            }
+        }
+        else{
+            if !buttonOn{
+                turnOn()
+            }
+            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (Timer) in
+                self.item = 0
+            }
+            item += 1
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
