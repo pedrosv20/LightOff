@@ -35,11 +35,11 @@ public class Contador {
         timeRectLabel.zPosition = 5
         
         increaseHeight = increaseHeightofHeight
-        
+        timeRectLabel.isHidden = true
         scene.addChild(timeRect)
         scene.addChild(timeRectLabel)
     }
-   
+    
     
     
     func update(quartoAceso: Int) {
@@ -81,7 +81,6 @@ public class Contador {
                 
             }
             else if !gameOver{
-                scene.removeAllActions()
                 scene.fundo.removeFromParent()
                 timeRect.removeFromParent()
                 gameOver = true

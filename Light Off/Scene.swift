@@ -13,34 +13,48 @@ public class Scene: SKScene {
     var texto = SKLabelNode(text: "You have to keep the lights off")
     var texto2 = SKLabelNode(text: "Tap the rooms to see what happens")
     var texto3 = SKLabelNode(text: "Try as hard as you can!!")
+    var texto4 = SKLabelNode(text: "Tap here to start")
     
     
     override public func didMove(to view: SKView) {
+        comecou = false
+        
         if Andar.shared.andar == 0{
             texto.fontColor = .black
             texto3.fontColor = .black
             texto2.fontColor = .black
             
+            texto4.fontColor = .yellow
+            
             texto2.position = CGPoint(x: frame.midX, y: 1300)
             texto.position = CGPoint(x: frame.midX, y: 1200)
             texto3.position = CGPoint(x: frame.midX, y: 1100)
+            texto4.position = CGPoint(x: frame.midX, y: 350)
             
-            texto.fontSize = 25
-            texto2.fontSize = 25
-            texto3.fontSize = 25
+            texto.fontSize = 24
+            texto2.fontSize = 24
+            texto3.fontSize = 24
+            texto4.fontSize = 40
+
             
-            texto.fontName = "8-bit pusab"
-            texto2.fontName = "8-bit pusab"
-            texto3.fontName = "8-bit pusab"
+            texto.fontName = "PressStart2P-Regular"
+            texto2.fontName = "PressStart2P-Regular"
+            texto3.fontName = "PressStart2P-Regular"
+            texto4.fontName = "PressStart2P-Regular"
+            
             
             texto.zPosition = 2
             texto2.zPosition = 2
             texto3.zPosition = 2
+            texto4.zPosition = 5
+            
             self.addChild(texto)
             self.addChild(texto2)
             self.addChild(texto3)
+            self.addChild(texto4)
             
         }
+        
     }
     
     
@@ -107,20 +121,46 @@ public class Scene: SKScene {
         self.viewController = viewController
     }
     
+    func startContador(){
+        if comecou != true{
+            points = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
+            contador.timeRectLabel.isHidden = false
+            comecou = true
+        }
+        if Andar.shared.andar == 0{
+            texto4.removeFromParent()
+            texto.removeFromParent()
+            texto2.removeFromParent()
+            texto3.removeFromParent()
+            
+        }
+    }
+    
     func touchDown(atPoint pos : CGPoint) {
         for quarto in listaQuarto{
+            
+            
+            
             if quarto.contains(pos){
-                if (quarto.background.texture!.description.contains("quarto1")){
-                    print("maluco")
-                    quarto.switchLight(teste: 1)
-                }
-                else{
-                    print("doidao")
-                    quarto.switchLight(teste: "oi")
-                }
+                startContador()
+                quarto.switchLight(teste: "toqueNormal")
+                //                    if (quarto.background.texture!.description.contains("Prancheta 48")){
+                //                        print("maluco")
+                //                        quarto.switchLight(teste: 1)
+                //                    }
+                //                    else{
+                //                        quarto.switchLight(teste: "oi")
+                //                    }
+                //
+                //                print("doidao")
+                
+                
+                
             }
         }
     }
+    
+    
     public func gameOver(){
         viewController.gameOver()
         Andar.shared.tempo = time
@@ -136,26 +176,21 @@ public class Scene: SKScene {
     @objc func timer(){
         time += 1
         Andar.shared.pontuacao += 12
+        Andar.shared.money += 12
         
     }
     
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { touchDown(atPoint: t.location(in: self)) }
-        if comecou != true{
-            points = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
-        }
-        comecou = true
-        if Andar.shared.andar == 0{
-            texto.removeFromParent()
-            texto2.removeFromParent()
-            texto3.removeFromParent()
-        }
+       
+        
         
     }
     
     
     override public func update(_ currentTime: TimeInterval) {
+
         if comecou != false{
             var quartoAceso = 0
             for quarto in listaQuarto{
@@ -163,6 +198,7 @@ public class Scene: SKScene {
                     quartoAceso += 1
                 }
             }
+            
             contador.update(quartoAceso: quartoAceso)
             
         }

@@ -12,24 +12,27 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    weak var scene : Scene?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
+        if let view = self.view as! SKView? {
+            let scene = Scene(size: CGSize(width: 828, height:  1792))
+            self.scene = scene
+            scene.setViewController(viewController: self)
+            scene.scaleMode = .fill
+            view.presentScene(scene)
+            view.ignoresSiblingOrder = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let view = self.view as! SKView? {
-            let scene = Scene(size: CGSize(width: 828, height:  1792))
-            scene.setViewController(viewController: self)
-            scene.scaleMode = .aspectFit
-            view.presentScene(scene)
-            view.ignoresSiblingOrder = true
-            
+        if let scene = scene {
+            scene.montaCena()
         }
-
     }
 
     override var shouldAutorotate: Bool {

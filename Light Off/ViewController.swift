@@ -11,33 +11,19 @@ import SpriteKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var brigthness: UIImageView!
-    @IBOutlet weak var imgSwitch: UIImageView!
     var TImer: Timer?
+    
     override func viewDidLoad() {
-        brigthness.isHidden = false
-        navigationController?.navigationBar.tintColor = .black
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (Timer) in
-            self.performSegue(withIdentifier: "startGame", sender: self)
-        }
-        
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func tapSwitch(_ sender: Any) {
-
-       
-        
-        
-    
-            
-        
-        
-        
-        
+        self.performSegue(withIdentifier: "startGame", sender: self)
     }
     
 

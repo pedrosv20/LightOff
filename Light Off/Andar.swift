@@ -11,17 +11,23 @@ import UIKit
 
 class Andar {
     static let shared = Andar()
-    
-    var andar: Int =  0
-    var dificuldade: Double = 90
-    var pontuacao: Int = 1
-    var tempo: Int = 0
-    var money = 200
+
     private init(){
+        pontuacao = UserDefaults.standard.integer(forKey: "pontuacao")
+        andar = UserDefaults.standard.integer(forKey: "andar")
     }
-    
-    
-    
-    
-    
+    var dificuldade: Double = 90
+    var tempo: Int = 0
+    var money = 0
+    var nivel = 1
+    var andar: Int {
+        didSet{
+            UserDefaults.standard.set(self.andar, forKey: "andar")
+        }
+    }
+    var pontuacao: Int{
+        didSet{
+            UserDefaults.standard.set(self.pontuacao, forKey: "pontuacao")
+        }
+    }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		075DFC1122835D2600AAE9CB /* Andar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DFC1022835D2600AAE9CB /* Andar.swift */; };
+		078AED7322C26149009C2B0B /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */; };
 		07A7A30022B17BD1001237B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7A2FF22B17BD1001237B3 /* ViewController.swift */; };
 		07A7A30322B958F5001237B3 /* 8bit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A7A30222B958F5001237B3 /* 8bit.ttf */; };
 		07EE6E2F226F84D900E5A3DE /* contador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE6E2E226F84D900E5A3DE /* contador.swift */; };
@@ -15,7 +16,6 @@
 		E89F9E292260B66B00A07A87 /* Quarto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F9E282260B66B00A07A87 /* Quarto.swift */; };
 		E89F9E2B2260C46B00A07A87 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F9E2A2260C46B00A07A87 /* Scene.swift */; };
 		E8D2FB7D225E4C2C005F539E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D2FB7C225E4C2C005F539E /* AppDelegate.swift */; };
-		E8D2FB81225E4C2C005F539E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8D2FB80225E4C2C005F539E /* Actions.sks */; };
 		E8D2FB85225E4C2C005F539E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D2FB84225E4C2C005F539E /* GameViewController.swift */; };
 		E8D2FB88225E4C2C005F539E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D2FB86225E4C2C005F539E /* Main.storyboard */; };
 		E8D2FB8A225E4C2E005F539E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D2FB89225E4C2E005F539E /* Assets.xcassets */; };
@@ -26,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		075DFC1022835D2600AAE9CB /* Andar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Andar.swift; sourceTree = "<group>"; };
+		078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		07A7A2FF22B17BD1001237B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07A7A30222B958F5001237B3 /* 8bit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bit.ttf; sourceTree = "<group>"; };
 		07EE6E2E226F84D900E5A3DE /* contador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contador.swift; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		E89F9E2A2260C46B00A07A87 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		E8D2FB79225E4C2C005F539E /* Light Off.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Light Off.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D2FB7C225E4C2C005F539E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8D2FB80225E4C2C005F539E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		E8D2FB84225E4C2C005F539E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E8D2FB87225E4C2C005F539E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8D2FB89225E4C2E005F539E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				07A7A30222B958F5001237B3 /* 8bit.ttf */,
+				078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -87,7 +88,6 @@
 				E8D2FB86225E4C2C005F539E /* Main.storyboard */,
 				07A7A2FF22B17BD1001237B3 /* ViewController.swift */,
 				E8D2FB7C225E4C2C005F539E /* AppDelegate.swift */,
-				E8D2FB80225E4C2C005F539E /* Actions.sks */,
 				E89F9E282260B66B00A07A87 /* Quarto.swift */,
 				E89F9E2A2260C46B00A07A87 /* Scene.swift */,
 				E8D2FB84225E4C2C005F539E /* GameViewController.swift */,
@@ -174,8 +174,8 @@
 				E8D2FB8D225E4C2E005F539E /* LaunchScreen.storyboard in Resources */,
 				07A7A30322B958F5001237B3 /* 8bit.ttf in Resources */,
 				E8D2FB9A225E52B3005F539E /* soundOff.mp3 in Resources */,
-				E8D2FB81225E4C2C005F539E /* Actions.sks in Resources */,
 				E8D2FB99225E52B3005F539E /* soundOn.mp3 in Resources */,
+				078AED7322C26149009C2B0B /* PressStart2P-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -342,6 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZSLUMCNRNL;
 				INFOPLIST_FILE = "Light Off/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZSLUMCNRNL;
 				INFOPLIST_FILE = "Light Off/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

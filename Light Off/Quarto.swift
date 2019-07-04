@@ -29,13 +29,23 @@ public class Quarto: SKSpriteNode{
     var item = 0
     
     public override init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        
-        background = SKSpriteNode(imageNamed: ["quarto1",  "sala1", "banheiro1", "cozinha1"].randomElement()!)
+        //        if Andar.shared.nivel == 1 {
+        //        }
+        //        else{
+        //            background = SKSpriteNode(imageNamed: ["Prancheta 48",  "sala1", "banheiro1", "cozinha1"].randomElement()!)
+        //            brightness = SKSpriteNode(imageNamed: "intro")
+        //            light_off = SKSpriteNode(imageNamed: "light_off")
+        //            light = SKSpriteNode(imageNamed: "light")
+        //            mini_switch = SKSpriteNode(imageNamed: "switch_off1")
+        //            boneco = SKSpriteNode(imageNamed: ["boneco1", "boneco2", "boneco3", "boneco4", "boneco5", "boneco6"].randomElement()!)
+        //        }
+        background = SKSpriteNode(imageNamed: ["quarto1","banheiro1"].randomElement()!)
         brightness = SKSpriteNode(imageNamed: "intro")
         light_off = SKSpriteNode(imageNamed: "light_off")
         light = SKSpriteNode(imageNamed: "light")
         mini_switch = SKSpriteNode(imageNamed: "switch_off1")
         boneco = SKSpriteNode(imageNamed: ["boneco1", "boneco2", "boneco3", "boneco4", "boneco5", "boneco6"].randomElement()!)
+
         
         background.position = CGPoint(x: 0, y: 0)
         light.position = CGPoint(x: light.frame.midX, y: 120)
@@ -47,13 +57,12 @@ public class Quarto: SKSpriteNode{
         brightness.zPosition = 1
         light_off.zPosition = 2
         boneco.zPosition = 2
-        
-        
-        
         brightness.alpha = 0.8
+        
         brightness.isHidden = true
         light_off.isHidden = true
         mini_switch.isHidden = true
+        
         super.init(texture: texture, color: color, size: size)
         
         addChild(background)
