@@ -11,6 +11,7 @@
 		078AED7322C26149009C2B0B /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */; };
 		07A7A30022B17BD1001237B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7A2FF22B17BD1001237B3 /* ViewController.swift */; };
 		07A7A30322B958F5001237B3 /* 8bit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A7A30222B958F5001237B3 /* 8bit.ttf */; };
+		07E1182D22CF6DCA0075EF42 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E1182C22CF6DCA0075EF42 /* Tutorial.swift */; };
 		07EE6E2F226F84D900E5A3DE /* contador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE6E2E226F84D900E5A3DE /* contador.swift */; };
 		07EE6E912270A2DA00E5A3DE /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE6E902270A2DA00E5A3DE /* EndGameViewController.swift */; };
 		E89F9E292260B66B00A07A87 /* Quarto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F9E282260B66B00A07A87 /* Quarto.swift */; };
@@ -29,6 +30,7 @@
 		078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		07A7A2FF22B17BD1001237B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07A7A30222B958F5001237B3 /* 8bit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8bit.ttf; sourceTree = "<group>"; };
+		07E1182C22CF6DCA0075EF42 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		07EE6E2E226F84D900E5A3DE /* contador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contador.swift; sourceTree = "<group>"; };
 		07EE6E902270A2DA00E5A3DE /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		E89F9E282260B66B00A07A87 /* Quarto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quarto.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				E8D2FB8E225E4C2E005F539E /* Info.plist */,
 				07EE6E902270A2DA00E5A3DE /* EndGameViewController.swift */,
 				075DFC1022835D2600AAE9CB /* Andar.swift */,
+				07E1182C22CF6DCA0075EF42 /* Tutorial.swift */,
 			);
 			path = "Light Off";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D2FB85225E4C2C005F539E /* GameViewController.swift in Sources */,
+				07E1182D22CF6DCA0075EF42 /* Tutorial.swift in Sources */,
 				07EE6E2F226F84D900E5A3DE /* contador.swift in Sources */,
 				07EE6E912270A2DA00E5A3DE /* EndGameViewController.swift in Sources */,
 				E89F9E2B2260C46B00A07A87 /* Scene.swift in Sources */,

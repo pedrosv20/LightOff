@@ -155,7 +155,6 @@ public class Scene: SKScene {
                 //                print("doidao")
                 
                 
-                
             }
         }
     }
