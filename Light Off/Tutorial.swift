@@ -9,7 +9,7 @@ public class Tutorial: SKScene {
     var texto = SKLabelNode(text: "You have to keep the lights off")
     var dedo = SKSpriteNode()
     
-    var maxTicks = 30
+    var maxTicks = 60
     var currentTick = 0
     
     override public func didMove(to view: SKView) {
@@ -33,7 +33,7 @@ public class Tutorial: SKScene {
         
         
         let quartoDireita = Quarto()
-        quartoDireita.setScale(0.73)
+        quartoDireita.setScale(1)
         quartoDireita.position = CGPoint(x: frame.midX, y: -1050 +  frame.midY + CGFloat(550))
         quartoDireita.zPosition = 1
         addChild(quartoDireita)
@@ -70,7 +70,6 @@ public class Tutorial: SKScene {
     func touchDown(atPoint pos : CGPoint) {
         for i in listaQuarto{
             if i.contains(pos){
-                apertaBotao()
                 i.switchLight(teste: "teste")
             }
         }
@@ -89,13 +88,22 @@ public class Tutorial: SKScene {
     
     
     override public func update(_ currentTime: TimeInterval) {
-        currentTick += 1
-        
-        if currentTick >= maxTicks {
-            apertaBotao()
-            currentTick = 0
+        if listaQuarto[0].buttonOn == true{
+            UIView.animate(withDuration: 0.2) {
+                self.dedo.isHidden = false
+            }
+            currentTick += 1
+            if currentTick >= maxTicks {
+                apertaBotao()
+                currentTick = 0
+            }
         }
-
+        else{
+            UIView.animate(withDuration: 0.4) {
+               self.dedo.isHidden = true
+            }
+            
+        }
     }
     
 }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +21,7 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90578687889999998" green="0.46718082999999999" blue="0.2582845325" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
@@ -142,6 +141,8 @@ Cg
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="AYl-0l-CI8" firstAttribute="leading" secondItem="2sd-3U-Kha" secondAttribute="leading" id="3te-sK-jai"/>
+                            <constraint firstItem="AYl-0l-CI8" firstAttribute="trailing" secondItem="2sd-3U-Kha" secondAttribute="trailing" id="4UR-hR-Axp"/>
                             <constraint firstItem="EL5-UW-yzE" firstAttribute="width" secondItem="HPZ-3B-F04" secondAttribute="width" id="4pB-jH-0Tu"/>
                             <constraint firstItem="EL5-UW-yzE" firstAttribute="centerY" secondItem="2sd-3U-Kha" secondAttribute="centerY" multiplier="1.4" id="7zn-PW-aBw"/>
                             <constraint firstItem="2sd-3U-Kha" firstAttribute="bottom" secondItem="EL5-UW-yzE" secondAttribute="bottom" id="ATf-W1-XR2"/>
@@ -154,7 +155,9 @@ Cg
                             <constraint firstItem="2sd-3U-Kha" firstAttribute="trailing" secondItem="AYl-0l-CI8" secondAttribute="trailing" id="Z8v-g1-WYz"/>
                             <constraint firstItem="AYl-0l-CI8" firstAttribute="leading" secondItem="2sd-3U-Kha" secondAttribute="leading" id="bEU-CT-bRv"/>
                             <constraint firstItem="AYl-0l-CI8" firstAttribute="top" secondItem="HPZ-3B-F04" secondAttribute="top" id="jT6-3q-Hlc"/>
+                            <constraint firstAttribute="bottom" secondItem="AYl-0l-CI8" secondAttribute="bottom" id="sg2-4g-FsE"/>
                             <constraint firstItem="LFq-9n-yak" firstAttribute="trailing" secondItem="2sd-3U-Kha" secondAttribute="trailing" id="ulZ-J9-mAz"/>
+                            <constraint firstItem="AYl-0l-CI8" firstAttribute="top" secondItem="HPZ-3B-F04" secondAttribute="top" id="w7j-Ro-MV2"/>
                             <constraint firstAttribute="bottom" secondItem="AYl-0l-CI8" secondAttribute="bottom" id="xam-CX-HfR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2sd-3U-Kha"/>
@@ -262,7 +265,7 @@ Off</string>
     </scenes>
     <resources>
         <image name="addFloor" width="250" height="243.5"/>
-        <image name="fase1" width="828.5" height="1792.5"/>
+        <image name="fase1" width="414" height="896"/>
         <image name="restart" width="248" height="228.5"/>
     </resources>
 </document>

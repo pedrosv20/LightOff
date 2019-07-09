@@ -75,7 +75,6 @@ public class Scene: SKScene {
             print("")
             
         }
-        
         fundo.position = CGPoint(x: frame.midX, y: frame.midY)
         self.addChild(fundo)
         
@@ -189,8 +188,9 @@ public class Scene: SKScene {
     
     
     override public func update(_ currentTime: TimeInterval) {
-
+        
         if comecou != false{
+            contador.timeRect.isHidden = false
             var quartoAceso = 0
             for quarto in listaQuarto{
                 if quarto.buttonOn == true {
@@ -200,6 +200,9 @@ public class Scene: SKScene {
             
             contador.update(quartoAceso: quartoAceso)
             
+        }
+        else{
+            contador.timeRect.isHidden = true
         }
     }
     
