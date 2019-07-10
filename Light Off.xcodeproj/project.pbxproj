@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0757922122D4F61800F7AC88 /* LIGHT OFF GAME.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0757922022D4F61800F7AC88 /* LIGHT OFF GAME.m4a */; };
+		0757922322D4F62200F7AC88 /* LIGHT OFF MENU.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0757922222D4F62200F7AC88 /* LIGHT OFF MENU.m4a */; };
 		075DFC1122835D2600AAE9CB /* Andar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DFC1022835D2600AAE9CB /* Andar.swift */; };
 		078AED7322C26149009C2B0B /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */; };
 		07A7A30022B17BD1001237B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7A2FF22B17BD1001237B3 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0757922022D4F61800F7AC88 /* LIGHT OFF GAME.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LIGHT OFF GAME.m4a"; sourceTree = "<group>"; };
+		0757922222D4F62200F7AC88 /* LIGHT OFF MENU.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LIGHT OFF MENU.m4a"; sourceTree = "<group>"; };
 		075DFC1022835D2600AAE9CB /* Andar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Andar.swift; sourceTree = "<group>"; };
 		078AED7222C26149009C2B0B /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		07A7A2FF22B17BD1001237B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		E8D2FB96225E52A4005F539E /* som */ = {
 			isa = PBXGroup;
 			children = (
+				0757922022D4F61800F7AC88 /* LIGHT OFF GAME.m4a */,
+				0757922222D4F62200F7AC88 /* LIGHT OFF MENU.m4a */,
 				E8D2FB98225E52B3005F539E /* soundOff.mp3 */,
 				E8D2FB97225E52B3005F539E /* soundOn.mp3 */,
 			);
@@ -172,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0757922322D4F62200F7AC88 /* LIGHT OFF MENU.m4a in Resources */,
 				E8D2FB88225E4C2C005F539E /* Main.storyboard in Resources */,
 				E8D2FB8A225E4C2E005F539E /* Assets.xcassets in Resources */,
 				E8D2FB8D225E4C2E005F539E /* LaunchScreen.storyboard in Resources */,
@@ -179,6 +186,7 @@
 				E8D2FB9A225E52B3005F539E /* soundOff.mp3 in Resources */,
 				E8D2FB99225E52B3005F539E /* soundOn.mp3 in Resources */,
 				078AED7322C26149009C2B0B /* PressStart2P-Regular.ttf in Resources */,
+				0757922122D4F61800F7AC88 /* LIGHT OFF GAME.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

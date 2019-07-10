@@ -10,6 +10,7 @@ public class Scene: SKScene {
     var comecou = false
     var points: Timer?
     var time = 0
+    var somFundo = SKAudioNode(fileNamed: "LIGHT OFF GAME.m4a")
     var texto = SKLabelNode(text: "You have to keep the lights off")
     var texto2 = SKLabelNode(text: "Tap the rooms to see what happens")
     var texto3 = SKLabelNode(text: "Try as hard as you can!!")
@@ -18,6 +19,9 @@ public class Scene: SKScene {
     
     override public func didMove(to view: SKView) {
         comecou = false
+        
+        
+        
         
         if Andar.shared.andar == 0{
             texto.fontColor = .black
@@ -59,6 +63,11 @@ public class Scene: SKScene {
     
     
     func montaCena(){
+        somFundo.autoplayLooped = true
+        somFundo.run(SKAction.changeVolume(to: Float(0.2), duration: 0))
+        somFundo.run(SKAction.play())
+        
+        self.addChild(self.somFundo)
         time = 0
         fundo.zPosition = 0
         
@@ -160,10 +169,12 @@ public class Scene: SKScene {
     
     
     public func gameOver(){
+        
+        somFundo.removeFromParent()
+        somFundo.removeAllActions()
         viewController.gameOver()
         Andar.shared.tempo = time
         points?.invalidate()
-        fundo.removeFromParent()
         listaQuarto.forEach { (q) in
             q.removeFromParent()
         }

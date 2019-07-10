@@ -8,21 +8,39 @@
 
 import UIKit
 import SpriteKit
-class ViewController: UIViewController {
+import AVFoundation
+class ViewController: UIViewController{
 
     @IBOutlet weak var brigthness: UIImageView!
-    var TImer: Timer?
+    let somFundo = URL(fileURLWithPath: Bundle.main.path(forResource: "LIGHT OFF MENU", ofType: "m4a")!)
+    var audioPlayer = AVAudioPlayer()
     
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        playSound()
         navigationController?.navigationBar.isHidden = true
     }
     
+    
+    func playSound() {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: somFundo)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.play()
+            audioPlayer.volume = 0.2
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
     @IBAction func tapSwitch(_ sender: Any) {
+        audioPlayer.stop()
         self.performSegue(withIdentifier: "startGame", sender: self)
     }
     

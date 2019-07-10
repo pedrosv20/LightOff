@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class EndGameViewController: UIViewController {
     
     @IBOutlet weak var lblPoints: UILabel!
@@ -16,17 +16,20 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var buyLbl: UILabel!
     @IBOutlet weak var totalMoney: UILabel!
-    
     @IBOutlet weak var fundo: UIImageView!
     @IBOutlet weak var restartButton: UIButton!
+    let somFundo = URL(fileURLWithPath: Bundle.main.path(forResource: "LIGHT OFF MENU", ofType: "m4a")!)
+    var audioPlayer = AVAudioPlayer()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        
-        
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (Timer) in
             self.restartButton.isEnabled = true
             self.nextButton.isEnabled = true
@@ -35,14 +38,15 @@ class EndGameViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        playSound()
+        #if DEBUG
+        Andar.shared.pontuacao = 10000
+        #endif
+        
         restartButton.isEnabled = false
         nextButton.isEnabled = false
         buyLbl.alpha = 0
-        
-//        #if DEBUG
-//        Andar.shared.pontuacao = 10000
-//        #endif
-        
         totalMoney.text = "$\(Andar.shared.pontuacao)"
         lblPoints.text = "+$\(Andar.shared.money)"
         lblTempo.text = "\(Andar.shared.tempo) seconds saving energy"
@@ -108,6 +112,7 @@ class EndGameViewController: UIViewController {
     
     @IBAction func restart(_ sender: Any) {
         Andar.shared.money = 0
+        audioPlayer.stop()
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -202,16 +207,17 @@ class EndGameViewController: UIViewController {
             
         }
     }
-
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func playSound() {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: somFundo)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.volume = 0.2
+            audioPlayer.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+
     
 }

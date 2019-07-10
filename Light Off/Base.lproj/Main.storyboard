@@ -21,7 +21,6 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.90578687889999998" green="0.46718082999999999" blue="0.2582845325" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
@@ -265,7 +264,7 @@ Off</string>
     </scenes>
     <resources>
         <image name="addFloor" width="250" height="243.5"/>
-        <image name="fase1" width="414" height="896"/>
+        <image name="fase1" width="828.5" height="1792.5"/>
         <image name="restart" width="248" height="228.5"/>
     </resources>
 </document>
