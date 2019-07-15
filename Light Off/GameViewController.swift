@@ -31,7 +31,9 @@ class GameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let scene = scene {
+            Andar.shared.andar = 0
             scene.montaCena()
+            scene.cliqueDedo(andar: Andar.shared.andar)
         }
     }
 

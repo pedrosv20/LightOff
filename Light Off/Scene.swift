@@ -11,55 +11,35 @@ public class Scene: SKScene {
     var points: Timer?
     var time = 0
     var somFundo = SKAudioNode(fileNamed: "LIGHT OFF GAME.m4a")
-    var texto = SKLabelNode(text: "You have to keep the lights off")
-    var texto2 = SKLabelNode(text: "Tap the rooms to see what happens")
-    var texto3 = SKLabelNode(text: "Try as hard as you can!!")
-    var texto4 = SKLabelNode(text: "Tap here to start")
+    var texto = SKLabelNode(text: "Keep the lights OFF!")
+    var dedo = SKSpriteNode()
+    var maxTicks = 30
+    var tick = 0
+    var node = SKSpriteNode()
     
     
-    override public func didMove(to view: SKView) {
-        comecou = false
-        
-        
-        
-        
-        if Andar.shared.andar == 0{
-            texto.fontColor = .black
-            texto3.fontColor = .black
-            texto2.fontColor = .black
-            
-            texto4.fontColor = .yellow
-            
-            texto2.position = CGPoint(x: frame.midX, y: 1300)
-            texto.position = CGPoint(x: frame.midX, y: 1200)
-            texto3.position = CGPoint(x: frame.midX, y: 1100)
-            texto4.position = CGPoint(x: frame.midX, y: 350)
-            
-            texto.fontSize = 24
-            texto2.fontSize = 24
-            texto3.fontSize = 24
-            texto4.fontSize = 40
-
-            
+    func cliqueDedo(andar: Int){
+        if andar == 0{
+            print("era pra ter ido")
+            dedo = SKSpriteNode(imageNamed: "dedo2")
+            dedo.zPosition = 21
+            dedo.position = CGPoint(x:  300 + frame.midX, y: 270)
+            texto.position = CGPoint(x:  300 + frame.midX, y: 350)
+            texto.fontColor = .yellow
             texto.fontName = "PressStart2P-Regular"
-            texto2.fontName = "PressStart2P-Regular"
-            texto3.fontName = "PressStart2P-Regular"
-            texto4.fontName = "PressStart2P-Regular"
-            
-            
-            texto.zPosition = 2
-            texto2.zPosition = 2
-            texto3.zPosition = 2
-            texto4.zPosition = 5
-            
-            self.addChild(texto)
-            self.addChild(texto2)
-            self.addChild(texto3)
-            self.addChild(texto4)
-            
+            texto.fontSize = 24
+            node.addChild(dedo)
+            node.addChild(texto)
+            node.zPosition = 30
+            addChild(node)
+            node.isHidden = false
         }
-        
     }
+    
+    override public func willMove(from view: SKView) {
+        comecou = false
+    }
+    
     
     
     func montaCena(){
@@ -135,22 +115,45 @@ public class Scene: SKScene {
             contador.timeRectLabel.isHidden = false
             comecou = true
         }
-        if Andar.shared.andar == 0{
-            texto4.removeFromParent()
-            texto.removeFromParent()
-            texto2.removeFromParent()
-            texto3.removeFromParent()
-            
+    }
+    
+    func apertaBotao(){
+        print("vamo")
+        let clica = SKAction.rotate(byAngle: 0.5, duration: 0.2)
+        let volta = SKAction.rotate(byAngle: -0.5, duration: 0.2)
+        clica.timingMode = .easeInEaseOut
+        dedo.run(clica) {
+            self.dedo.run(volta)
         }
+    }
+    public func gameOver(){
+        
+        somFundo.removeFromParent()
+        somFundo.removeAllActions()
+        viewController.gameOver()
+        node.removeAllChildren()
+        node.removeFromParent()
+        Andar.shared.tempo = time
+        points?.invalidate()
+        listaQuarto.removeAll()
+        comecou = false
+        listaQuarto.forEach { (q) in
+            q.removeFromParent()
+        }
+    }
+    
+    @objc func timer(){
+        time += 1
+        Andar.shared.pontuacao += 12
+        Andar.shared.money += 12
+        
     }
     
     func touchDown(atPoint pos : CGPoint) {
         for quarto in listaQuarto{
-            
-            
-            
             if quarto.contains(pos){
                 startContador()
+                node.isHidden = true
                 quarto.switchLight(teste: "toqueNormal")
                 //                    if (quarto.background.texture!.description.contains("Prancheta 48")){
                 //                        print("maluco")
@@ -161,35 +164,9 @@ public class Scene: SKScene {
                 //                    }
                 //
                 //                print("doidao")
-                
-                
             }
         }
     }
-    
-    
-    public func gameOver(){
-        
-        somFundo.removeFromParent()
-        somFundo.removeAllActions()
-        viewController.gameOver()
-        Andar.shared.tempo = time
-        points?.invalidate()
-        listaQuarto.forEach { (q) in
-            q.removeFromParent()
-        }
-        listaQuarto.removeAll()
-        comecou = false
-    }
-    
-    @objc func timer(){
-        time += 1
-        Andar.shared.pontuacao += 12
-        Andar.shared.money += 12
-        
-    }
-    
-    
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { touchDown(atPoint: t.location(in: self)) }
        
@@ -199,7 +176,13 @@ public class Scene: SKScene {
     
     
     override public func update(_ currentTime: TimeInterval) {
-        
+        if Andar.shared.andar == 0{
+            tick += 1
+            if tick >= maxTicks{
+                apertaBotao()
+                tick = 0
+            }
+        }
         if comecou != false{
             contador.timeRect.isHidden = false
             var quartoAceso = 0
